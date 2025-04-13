@@ -7,8 +7,6 @@ Projektissa käytetään pilvipalveluita:
 - **Frontend** deployataan **Verceliin**
 - **Backend** voidaan deployata **Railwayhin** (tai toimii paikallisesti kehityksessä)
 
-👉 Tämä täyttää arvosanan **5** vaatimukset.
-
 ---
 
 ## ✅ Backend
