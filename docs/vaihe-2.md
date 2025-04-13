@@ -26,3 +26,9 @@ GET    /todos
 POST   /todos   { "title": "string" }
 DELETE /todos/:id
 ```
+
+model Todo {
+id Int @id @default(autoincrement())
+title String
+completed Boolean @default(false)
+}
