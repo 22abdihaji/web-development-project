@@ -1,11 +1,11 @@
 
-# 📚 Book Collection Manager – Project Presentation
+#  Book Collection Manager – Project Presentation
 
-## 📝 Project Overview
+##  Project Overview
 
 Book Collection Manager is a full-stack web application allowing users to register, log in, and manage a personal library of books. Users can add, edit, delete, and review books. Built with **Next.js**, **React**, and **Tailwind CSS** on the frontend, and **NestJS**, **Prisma**, and **PostgreSQL** on the backend. Authentication is implemented with **JWT** and protected by middleware.
 
-## 📌 Use Case Summary
+##  Use Case Summary
 
 | Use Case | Implemented | Notes |
 |----------|-------------|-------|
@@ -15,7 +15,7 @@ Book Collection Manager is a full-stack web application allowing users to regist
 | 4. User can edit/delete books | ✅ | Editable modal and DELETE/PATCH API methods |
 | 5. User can see other reviews | ✅ | Reviews loaded and shown under books |
 
-## ✍️ Technical Implementation
+##  Technical Implementation
 
 - **Frontend:** Next.js, React, Tailwind, React Hook Form
 - **Backend:** NestJS, Prisma, PostgreSQL
@@ -23,7 +23,7 @@ Book Collection Manager is a full-stack web application allowing users to regist
 - **Testing:** Manual UI testing in browser
 - **Error Handling:** NestJS uses `HttpException`, frontend uses toast notifications
 
-## 🚂 Development Process
+##  Development Process
 
 ### Week 1 (18h)
 - Setup project and routes
@@ -37,7 +37,7 @@ Book Collection Manager is a full-stack web application allowing users to regist
 
 **Total Hours:** 38h
 
-## ☀️ Reflection and Future Work
+##  Reflection and Future Work
 
 ### Reflection
 - Every stage built on the previous one
@@ -49,7 +49,7 @@ Book Collection Manager is a full-stack web application allowing users to regist
 - Improve search/sort logic
 - Add unit testing for backend services
 
-## 📊 Work Hours Log
+##  Work Hours Log
 
 | Week | Hours |
 |------|-------|
@@ -57,7 +57,7 @@ Book Collection Manager is a full-stack web application allowing users to regist
 | Week 2 | 20 |
 | **Total** | **38h** |
 
-## 🏁 Grade Suggestion
+##  Grade Suggestion
 
 - Use Cases: 5/5
 - Work Hours: 2/5
