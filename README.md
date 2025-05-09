@@ -39,7 +39,7 @@
 - **Backend:** API Routes / NestJS (depending on version)
 - **Database:** MongoDB (Mongoose)
 
-![Technology Stack Chart](link-to-your-chart-image-if-hosted)
+
 
 ---
 
