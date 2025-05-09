@@ -1,59 +1,43 @@
-import Link from "next/link";
+"use client";
+
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { getCookie, deleteCookie } from "cookies-next";
+import Link from "next/link";
 
 export default function Navbar() {
-  const [user, setUser] = useState<any>(null);
-  const router = useRouter();
+  const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
+    const storedToken = getCookie("token");
+    setToken(storedToken as string | null);
   }, []);
 
   const handleLogout = () => {
+    deleteCookie("token");
     localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    router.push("/login");
+    window.location.href = "/login";
   };
 
+  if (token === null) return null; // Prevent SSR mismatch
+
   return (
-    <nav className="bg-blue-600 p-4 text-white flex justify-between items-center">
-      <div className="text-lg font-bold">
-        <Link href="/" className="hover:underline">
-          Booknest
+    <nav style={{ padding: "1rem", background: "#f1f1f1" }}>
+      <Link href="/" style={{ marginRight: "1rem" }}>
+        Etusivu
+      </Link>
+      <Link href="/review" style={{ marginRight: "1rem" }}>
+        Arvostele
+      </Link>
+
+      {token ? (
+        <button onClick={handleLogout} style={{ marginRight: "1rem" }}>
+          Kirjaudu ulos
+        </button>
+      ) : (
+        <Link href="/login" style={{ marginRight: "1rem" }}>
+          Kirjaudu
         </Link>
-      </div>
-      <div className="flex items-center space-x-4">
-        <Link href="/login" className="hover:underline">
-          Login
-        </Link>
-        <Link href="/signup" className="hover:underline">
-          Signup
-        </Link>
-        <Link href="/books" className="hover:underline">
-          Books
-        </Link>
-        <Link href="/reviews" className="hover:underline">
-          Reviews
-        </Link>
-        {user && (
-          <>
-            <Link href="/profile" className="hover:underline">
-              Profile
-            </Link>
-            <span className="ml-2">Welcome, {user.name}!</span>
-            <button
-              onClick={handleLogout}
-              className="ml-2 bg-red-500 hover:bg-red-600 px-3 py-1 rounded"
-            >
-              Logout
-            </button>
-          </>
-        )}
-      </div>
+      )}
     </nav>
   );
 }

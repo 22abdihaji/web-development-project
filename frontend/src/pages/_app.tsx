@@ -1,16 +1,17 @@
-import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "../hooks/queryClient";
-import Navbar from "../components/Navbar";
-import "../styles/globals.css";
-import "../styles/globals.css";
+import { Toaster } from "react-hot-toast";
 import type { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }: any) {
+import "../styles/globals.css";
+import Navbar from "@/components/Navbar";
+
+export default function App({ Component, pageProps }: AppProps) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Component {...pageProps} />
-    </QueryClientProvider>
+    <>
+      <Navbar />
+      <main style={{ padding: "1rem" }}>
+        <Toaster position="top-right" />
+        <Component {...pageProps} />
+      </main>
+    </>
   );
 }
-
-export default MyApp;

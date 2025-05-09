@@ -1,15 +1,17 @@
-import axios from "axios";
+const API_BASE_URL = "http://localhost:3001";
 
-const api = axios.create({
-  baseURL: "http://localhost:3000",
-});
+export const fetchBooks = async () => {
+  const response = await fetch(`${API_BASE_URL}/books`);
+  if (!response.ok) throw new Error("Failed to fetch books");
+  return response.json();
+};
 
-api.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
-  if (token && config.headers) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-});
-
-export default api;
+export const addBook = async (bookData) => {
+  const response = await fetch(`${API_BASE_URL}/books`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(bookData),
+  });
+  if (!response.ok) throw new Error("Failed to add book");
+  return response.json();
+};
