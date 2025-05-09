@@ -63,3 +63,5 @@ Book Collection Manager is a full-stack web application allowing users to regist
 - Work Hours: 2/5
 - Reflection: Covered
 - Final Grade: **4 (Linjaava)**
+
+- LINK TO THE VIDEO: 
